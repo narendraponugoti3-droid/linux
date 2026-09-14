@@ -32,3 +32,32 @@
 /       → Root of the entire Linux filesystem
 /root   → Home directory of the root user
 - /home — Users' Personal Folders
+
+
+
+<img width="1268" height="595" alt="image" src="https://github.com/user-attachments/assets/bfd9d661-bf15-4f65-9e57-5c976297b4b5" />
+
+
+```
+swap --> back up memory 
+$top 
+1 zombie
+
+$top -P
+$top -M 
+
+$htop -- show graphically 
+$Sleep 500 
+backend run 
+$sleep 500 &
+if we want to see it 
+$ps -ef | grep sleep 
+to kill process 
+$kill process_id 
+to force fully kill 
+$kill -9 process_id 
+to pause the process 
+$kill -19 process_id 
+to resume the Process 
+$kill -18 process_id
+```

@@ -780,3 +780,13 @@ $ln -s file2.txt simlinktest.txt
 $ls -l 
 simlinktest.txt --> file2.txt
 ```
+### Hard Link 
+<img width="1103" height="801" alt="image" src="https://github.com/user-attachments/assets/a99985d6-b6f9-42e4-8282-59ab3451bf93" />
+
+I-Node value is unique data Structure that used to store metadata
+```
+$ln file3.txt file3_hard.txt 
+$ls -l
+to show i-Node value 
+$ls -li
+```

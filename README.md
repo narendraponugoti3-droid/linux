@@ -1,57 +1,624 @@
-# linux
-$sudo su // going to current user home directory 
-$pwd 
-$sudo su - // going to root user 
-$cd 
-$ls 
-$cd /   ==> 
-$cd ~   going to user home directory 
-absulete path : cd /var/wwww/html
-relative path : cd var/, cd www/ , cd html
+# Linux 
+# Linux Basic Commands
 
-$ls 
-$ls -l 
-hidden files 
-$ls -la 
-sort by time
-$ls -lt 
-sort by size 
-$ls -lS 
+This README contains basic Linux commands for working with users, directories, files, searching, and disk usage.
 
-$ls --help 
-Create a file 
-$touch index.html 
-$cat index.html                  // open file read-only file 
-adding contenxt to index.html 
-$echo "This is my index file ">index.html 
-$echo "This is my second file ">index.html 
-> remove the existing content and then add another content 
-$echo " This is my 3rd Content ">>index.html 
->> apend the content 
-$vi index.html 
-$cat -n index.html
-$cat -E index.html 
-$cat --help 
-$grep index index.html 
-$grep command index.html 
-$grep -i command index.html 
-$grep -c command index.html 
-$grep -ic command index.html 
-create directory 
-$mkdir page1 
-$mkdir page1 page2 page3 
-parent directory 
-$mkdir -p f1/f2/f3 
-$mkdir -v f5 
-remove file 
-$rm index.html 
-remove directory 
-$rmdir page1 // remove only empty folder 
-$rmdir -p f1/f2/f3/f4
-$rmdir -r page4  // remove folder with content 
-$rmdir -rf page4 
+---
 
-$du --disk usage 
-$du -h 
-$du -sh /var/log
-$du -sh auth.log
+## 1. Switching Users
+
+### `sudo su`
+
+Switch to a root shell while keeping the current user's environment/home directory.
+
+```bash
+$ sudo su
+$ pwd
+```
+
+Example:
+
+```text
+/home/narendra
+```
+
+---
+
+### `sudo su -`
+
+Switch to the root user and load the root user's login environment.
+
+```bash
+$ sudo su -
+$ pwd
+```
+
+Example:
+
+```text
+/root
+```
+
+### Difference
+
+| Command     | User | Home Directory                       |
+| ----------- | ---- | ------------------------------------ |
+| `sudo su`   | root | Usually remains in current directory |
+| `sudo su -` | root | `/root`                              |
+
+---
+
+## 2. `pwd` – Print Working Directory
+
+Shows the directory you are currently in.
+
+```bash
+$ pwd
+```
+
+Example:
+
+```text
+/home/narendra
+```
+
+---
+
+## 3. `cd` – Change Directory
+
+### Go to the root directory
+
+```bash
+$ cd /
+```
+
+`/` is the root of the Linux filesystem.
+
+---
+
+### Go to your home directory
+
+```bash
+$ cd ~
+```
+
+or simply:
+
+```bash
+$ cd
+```
+
+`~` represents the current user's home directory.
+
+For example:
+
+```text
+/home/narendra
+```
+
+---
+
+## 4. Absolute Path
+
+An absolute path starts from `/`, the root directory.
+
+Example:
+
+```bash
+$ cd /var/www/html
+```
+
+The complete path is specified.
+
+```text
+/
+└── var
+    └── www
+        └── html
+```
+
+Another example:
+
+```bash
+$ cd /home/narendra
+```
+
+---
+
+## 5. Relative Path
+
+A relative path starts from your **current directory**.
+
+For example, if you are currently in:
+
+```text
+/var
+```
+
+You can use:
+
+```bash
+$ cd www
+$ cd html
+```
+
+You do not need to specify `/var`.
+
+### Important
+
+Your original example:
+
+```bash
+cd var/
+cd www/
+cd html
+```
+
+works only if `var` exists inside your **current directory**.
+
+If you are at `/`, then:
+
+```bash
+cd var
+cd www
+cd html
+```
+
+will take you to:
+
+```text
+/var/www/html
+```
+
+---
+
+# 6. `ls` – List Files and Directories
+
+### Basic `ls`
+
+```bash
+$ ls
+```
+
+Displays files and directories in the current directory.
+
+---
+
+### `ls -l` – Long Listing
+
+```bash
+$ ls -l
+```
+
+Shows detailed information such as:
+
+* File permissions
+* Owner
+* Group
+* File size
+* Modification time
+* File name
+
+Example:
+
+```text
+-rw-r--r-- 1 root root 125 Sep 14 05:30 index.html
+```
+
+---
+
+## 7. Hidden Files
+
+Linux hidden files normally start with `.`.
+
+Example:
+
+```text
+.config
+.bashrc
+```
+
+### Show hidden files
+
+```bash
+$ ls -la
+```
+
+`-a` means **all files**, including hidden files.
+
+---
+
+# 8. Sort Files by Time
+
+```bash
+$ ls -lt
+```
+
+Where:
+
+* `-l` = long listing
+* `-t` = sort by modification time
+
+The newest files are normally shown first.
+
+---
+
+# 9. Sort Files by Size
+
+```bash
+$ ls -lS
+```
+
+Where:
+
+* `-l` = long listing
+* `-S` = sort by file size
+
+Largest files are normally shown first.
+
+---
+
+# 10. Get Command Help
+
+Most Linux commands provide help.
+
+```bash
+$ ls --help
+```
+
+Example:
+
+```bash
+$ cat --help
+```
+
+This displays available options and usage information.
+
+---
+
+# 11. Creating a File
+
+## `touch`
+
+Create an empty file:
+
+```bash
+$ touch index.html
+```
+
+Check the file:
+
+```bash
+$ ls -l
+```
+
+---
+
+# 12. Reading a File
+
+## `cat`
+
+Display the contents of a file:
+
+```bash
+$ cat index.html
+```
+
+`cat` displays the file contents in the terminal. It does **not** open the file in an editor.
+
+---
+
+# 13. Adding Content to a File
+
+## Using `echo` with `>`
+
+```bash
+$ echo "This is my index file" > index.html
+```
+
+`>` means:
+
+> Remove/replace the existing content and write the new content.
+
+For example:
+
+```bash
+$ echo "First content" > index.html
+$ echo "Second content" > index.html
+```
+
+The file will contain only:
+
+```text
+Second content
+```
+
+---
+
+# 14. Append Content Using `>>`
+
+```bash
+$ echo "This is my 3rd Content" >> index.html
+```
+
+`>>` means:
+
+> Add the new content to the end of the existing file.
+
+Example:
+
+```bash
+$ echo "First line" > index.html
+$ echo "Second line" >> index.html
+$ echo "Third line" >> index.html
+```
+
+Result:
+
+```text
+First line
+Second line
+Third line
+```
+
+### Difference Between `>` and `>>`
+
+| Operator | Meaning                    |
+| -------- | -------------------------- |
+| `>`      | Overwrite existing content |
+| `>>`     | Append to existing content |
+
+---
+
+# 15. `vi` – Text Editor
+
+Open a file using `vi`:
+
+```bash
+$ vi index.html
+```
+
+You can use `vi` to:
+
+* Create files
+* Edit files
+* Delete text
+* Search text
+* Save files
+
+---
+
+# 16. `cat -n` – Display Line Numbers
+
+```bash
+$ cat -n index.html
+```
+
+Example:
+
+```text
+     1  This is my index file
+     2  This is my second file
+     3  This is my third content
+```
+
+---
+
+# 17. `cat -E` – Show End of Lines
+
+```bash
+$ cat -E index.html
+```
+
+This displays `$` at the end of each line.
+
+Example:
+
+```text
+Hello World$
+Second Line$
+Third Line$
+```
+
+This can help identify line endings and trailing spaces.
+
+---
+
+# 18. `grep` – Search Text
+
+`grep` is used to search for text inside files.
+
+### Search for `index`
+
+```bash
+$ grep index index.html
+```
+
+---
+
+### Search for `command`
+
+```bash
+$ grep command index.html
+```
+
+---
+
+## Case-Insensitive Search
+
+```bash
+$ grep -i command index.html
+```
+
+`-i` means ignore uppercase/lowercase differences.
+
+For example, it can match:
+
+```text
+command
+Command
+COMMAND
+CoMmAnD
+```
+
+---
+
+## Count Matching Lines
+
+```bash
+$ grep -c command index.html
+```
+
+`-c` counts the number of matching lines.
+
+---
+
+## Case-Insensitive + Count
+
+```bash
+$ grep -ic command index.html
+```
+
+This means:
+
+```text
+-i → ignore case
+-c → count matching lines
+```
+
+---
+
+# 19. Creating Directories
+
+## Create One Directory
+
+```bash
+$ mkdir page1
+```
+
+---
+
+## Create Multiple Directories
+
+```bash
+$ mkdir page1 page2 page3
+```
+
+This creates:
+
+```text
+page1/
+page2/
+page3/
+```
+
+---
+
+# 20. Creating Parent Directories
+
+Use `mkdir -p` when you want to create multiple directories at once.
+
+```bash
+$ mkdir -p f1/f2/f3
+```
+
+This creates:
+
+```text
+f1/
+└── f2/
+    └── f3/
+```
+
+If the parent directories don't exist, `-p` creates them automatically.
+
+---
+
+## 21. `mkdir -v`
+
+```bash
+$ mkdir -v f5
+```
+
+`-v` means **verbose**.
+
+It displays information about what the command is doing.
+
+---
+
+# 22. Removing Files
+
+## `rm`
+
+Remove a file:
+
+```bash
+$ rm index.html
+```
+
+After running the command, `index.html` is deleted.
+
+⚠️ Be careful with `rm` because deleted files may not be recoverable easily.
+
+---
+
+# 23. Removing Empty Directories
+
+## `rmdir`
+
+```bash
+$ rmdir page1
+```
+
+`rmdir` removes an **empty directory**.
+
+If the directory contains files, `rmdir` will fail.
+
+---
+
+# 24. Removing Parent Directories
+
+```bash
+$ rmdir -p f1/f2/f3
+```
+
+This can remove the specified directory and empty parent directories.
+
+For example:
+
+```text
+f1/
+└── f2/
+    └── f3/
+```
+
+If `f3`, `f2`, and `f1` are empty, they can all be removed.
+
+---
+
+# 25. Remove Directory with Content
+
+The command for recursively removing a directory is:
+
+```bash
+$ rm -r page4
+```
+
+`-r` means **recursive**.
+
+It removes the directory and its contents.
+
+---
+
+## Force Remove Directory
+
+```bash
+$ rm -rf page4
+```
+
+Where:
+
+* `-r` = recursive
+* `-f` = force
+
+⚠️

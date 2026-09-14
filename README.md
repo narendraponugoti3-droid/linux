@@ -770,3 +770,13 @@ mv = MOVE
 mv = RENAME
      Same file, new name
 ```
+
+
+# Symbolic Link 
+<img width="1098" height="644" alt="image" src="https://github.com/user-attachments/assets/43a11391-811e-4776-b103-bd9b9b7b6e8c" />
+
+```
+$ln -s file2.txt simlinktest.txt 
+$ls -l 
+simlinktest.txt --> file2.txt
+```

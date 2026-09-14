@@ -744,7 +744,7 @@ You get:
 folder1/
 ├── file
 ```
-
+``` text
 Quick Cheat Sheet
 Copy
 $ cp file1.txt folder1/
@@ -769,3 +769,4 @@ mv = MOVE
 
 mv = RENAME
      Same file, new name
+```

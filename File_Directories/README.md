@@ -18,17 +18,17 @@
 | `/lib`    | 📚 Shared libraries                   |
 | `/proc`   | 🔍 Running system/process information |
 
-/proc = Information about the running Linux system
-/lib — Libraries -contains important libraries required by programs and the operating system.
-/dev — Devices -contains files representing hardware and virtual devices.
-/boot — Files Needed to Start Linux -Files needed to start Linux
-/tmp — Temporary Files - Temporary storage
-/var — Files That Change Frequently
-/etc — Configuration Files -contains system configuration files.Configuration settings
-/usr — User Programs and Software . Programs and software used by the system/users
-/sbin — System Administration Commands -contains important system administration commands.
-/bin — Basic Commands -Important/basic commands
-/root — Root User's Home
+- /proc = Information about the running Linux system
+- /lib — Libraries -contains important libraries required by programs and the operating system.
+- /dev — Devices -contains files representing hardware and virtual devices.
+- /boot — Files Needed to Start Linux -Files needed to start Linux
+- /tmp — Temporary Files - Temporary storage
+- /var — Files That Change Frequently
+- /etc — Configuration Files -contains system configuration files.Configuration settings
+- /usr — User Programs and Software . Programs and software used by the system/users
+- /sbin — System Administration Commands -contains important system administration commands.
+- /bin — Basic Commands -Important/basic commands
+- /root — Root User's Home
 /       → Root of the entire Linux filesystem
 /root   → Home directory of the root user
-/home — Users' Personal Folders
+- /home — Users' Personal Folders

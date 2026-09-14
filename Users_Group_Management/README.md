@@ -26,5 +26,33 @@ $id
 uid=1001(narendra) gid=1006(prod) groups=1001(narendra),1006(prod)
 
 to Append the group on existing group 
-$usermod -aG prod navishna 
+$usermod -aG prod navishna
+remove users from group 
+$gpasswd -d narendra prod 
+$cat /etc/passwd 
+$cat /etc/group
+
+usermod -aG dev,prod,marketing,tech_team tom
+
+getent group dev  - getent means get entries. It is a Linux command used to retrieve information from system databases such as:
+getent group dev = Look up the Linux group called dev and show its details.
 ```
+
+``` text
+
+While Creating the user using interact mode  , we need to enter all details, we should provide all details like password , name , mobile 
+
+$adduser narendra
+delete the user but not delete the home directory 
+$userdel narendra
+delete the user completly like home directory
+$userdel -r navishna
+delete the group
+$groupdel narendra
+$ls 
+
+
+```
+
+<img width="1190" height="184" alt="image" src="https://github.com/user-attachments/assets/1b507298-907b-4ec6-9daa-a0274d8c0d36" />
+<img width="1350" height="666" alt="image" src="https://github.com/user-attachments/assets/ee60a708-c8c1-4080-8486-667567071b58" />

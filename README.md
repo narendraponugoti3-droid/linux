@@ -745,4 +745,27 @@ folder1/
 ├── file
 ```
 
+Quick Cheat Sheet
+Copy
+$ cp file1.txt folder1/
+Copy to /tmp
+$ cp file1.txt /tmp/
+Copy and rename
+$ cp file1.txt folder1/page1.txt
+Create a file copy
+$ cp file1.txt file1_copy.txt
+Copy directory
+$ cp -r folder1 folder_copy
+Move file
+$ mv file1.txt folder2/
+Rename file
+$ mv file1.txt page1.txt
+Easy Way to Remember
+cp = COPY
+     Original + Copy
 
+mv = MOVE
+     Original is moved
+
+mv = RENAME
+     Same file, new name

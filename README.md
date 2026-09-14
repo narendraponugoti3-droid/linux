@@ -621,4 +621,128 @@ Where:
 * `-r` = recursive
 * `-f` = force
 
-⚠️
+
+# Linux `cp` and `mv` Commands
+
+## 29. Copy Files – `cp`
+
+The `cp` command is used to **copy files and directories**.
+
+### Copy a File into a Directory
+
+```bash
+$ cp file1.txt folder1/
+```
+
+This copies `file1.txt` into `folder1`.
+
+Before:
+
+```text
+.
+├── file1.txt
+└── folder1/
+```
+
+After:
+
+```text
+.
+├── file1.txt
+└── folder1/
+    └── file1.txt
+```
+
+The original `file1.txt` still exists.
+
+---
+
+### Copy a File to `/tmp`
+
+```bash
+$ cp file1.txt /tmp/
+```
+
+This copies `file1.txt` into the `/tmp` directory.
+
+The original file remains in the current directory.
+
+---
+
+## 30. Copy and Rename a File
+
+You can specify a **different filename at the destination**.
+
+```bash
+$ cp file1.txt folder1/page1.txt
+```
+
+This means:
+
+```text
+Source:      file1.txt
+Destination: folder1/page1.txt
+```
+
+Result:
+
+```text
+folder1/
+└── page1.txt
+```
+
+The original `file1.txt` is not changed.
+
+---
+
+### Copy a File and Create a Copy with a New Name
+
+```bash
+$ cp file1.txt file1_copy.txt
+```
+
+Result:
+
+```text
+file1.txt
+file1_copy.txt
+```
+
+Both files exist.
+
+---
+
+# 31. Copy Directories – `cp -r`
+
+To copy a directory and everything inside it, use `-r`.
+
+```bash
+$ cp -r folder1 folder_copy
+```
+
+`-r` means **recursive**.
+
+For example:
+
+```text
+folder1/
+├── file1.txt
+├── file2.txt
+└── page1/
+    └── index.html
+```
+
+Run:
+
+```bash
+$ cp -r folder1 folder_copy
+```
+
+You get:
+
+```text
+folder1/
+├── file
+```
+
+

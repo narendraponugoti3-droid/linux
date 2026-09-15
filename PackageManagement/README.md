@@ -1,4 +1,5 @@
 # Package Managers 
+``` text
 Linux Packages 
 .DEB ==> ubuntu , Debian , Linux mint 
 .RPM ==> RHEK, CENTOS ,Fedora 
@@ -42,3 +43,4 @@ $apt automremove -y
 
 $apt full-upgrade -y 
 
+```
